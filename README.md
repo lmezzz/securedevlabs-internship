@@ -1,47 +1,114 @@
 # 🛡️ SecureDevLabs Cybersecurity Internship
 
-A collection of weekly write-ups, notes, and learnings from my online cybersecurity internship at **SecureDevLabs**. Each week covers a new topic through hands-on tasks — from setting up lab environments to active reconnaissance, exploitation, and beyond.
+This repository contains my documented work, notes, and practical write-ups from the **SecureDevLabs Cybersecurity Internship**. The internship focused on developing hands-on cybersecurity skills through weekly tasks involving lab setup, reconnaissance, web application mapping, vulnerability validation, exploitation, and VAPT reporting.
 
-> ⚠️ All activities are performed in isolated, controlled lab environments. Nothing here is intended for use on real systems without authorization.
+All work was performed in isolated, controlled lab environments using intentionally vulnerable systems and authorized practice targets.
+
+> ⚠️ **Disclaimer:**  
+> This repository is for educational and authorized cybersecurity training only. The techniques, tools, and findings documented here must not be used against real systems without explicit permission.
 
 ---
 
-## 📁 Weekly Progress
+## 📌 Internship Overview
 
-| Week | Topic | Key Tools |
-|------|-------|-----------|
-| [Week 1](./Week-1-Recon-and-Lab-Setup/README.md) | Lab Setup & Network Reconnaissance | `nmap`, `ping`, `ip` |
-| [Week 2](./Week-2-Web-Application-Mapping/README.md) | Web Application Mapping & Input Discovery | `zaproxy`, `dig` |
-| [Week 3](./Week-3-Web-Vulnerability-Validation/README.md) | Web Vulnerability Validation | `sqlmap`, `zaproxy`, `firefox devtools` |
+The internship was structured around weekly practical tasks that followed a realistic penetration testing workflow. Each week introduced a new area of cybersecurity and required hands-on implementation, testing, documentation, and reflection.
+
+The main focus areas included:
+
+- Setting up a safe virtual cybersecurity lab
+- Performing network reconnaissance
+- Mapping web application attack surfaces
+- Intercepting and analyzing HTTP traffic
+- Validating common web vulnerabilities
+- Understanding exploitation workflows
+- Preparing a structured VAPT report
+- Documenting findings with evidence and remediation steps
+- Practicing responsible and ethical security testing
+
+---
+
+## 📁 Weekly Progress Summary
+
+| Week | Topic | Main Focus | Key Tools |
+|------|-------|------------|-----------|
+| [Week 1](./Week-1-Recon-and-Lab-Setup/README.md) | Lab Setup & Network Reconnaissance | Building the lab, identifying hosts, scanning services | `nmap`, `ping`, `ip` |
+| [Week 2](./Week-2-Web-Application-Mapping/README.md) | Web Application Mapping & Input Discovery | Understanding web app structure, proxying traffic, discovering inputs | `OWASP ZAP`, `dig`, `Firefox` |
+| [Week 3](./Week-3-Web-Vulnerability-Validation/README.md) | Web Vulnerability Validation | Testing SQL injection, XSS, filter bypasses, and mitigations | `sqlmap`, `OWASP ZAP`, `Firefox DevTools` |
+| [Week 4](./Week-4-VAPT-Report/README.md) | VAPT Report & Exploit Documentation | Documenting vulnerability analysis, exploitation evidence, impact, and remediation | `KVM/libvirt`, `Docker`, `gcc`, `pkexec`, `PolicyKit` |
 
 ---
 
 ## 🧰 Lab Environment
 
-- **Attacker Machine:** Host Linux system (`lexie@LexLuthor`) — Arch Linux
-- **Target Machine:** Metasploitable 2 VM — an intentionally vulnerable Linux system running DVWA
-- **Network:** Isolated virtual network (`192.168.100.0/24`) via KVM/libvirt
-- **Hypervisor:** KVM with libvirt virtual bridge (`virbr1`)
-- **Proxy:** OWASP ZAP listening on `127.0.0.1:8080`, Firefox manually proxied through it
+The lab was built using local virtualization to ensure all testing remained isolated and controlled.
+
+### Attacker Machine
+
+- **Host:** `lexie@LexLuthor`
+- **Operating System:** Arch Linux
+- **Role:** Attacker / testing machine
+- **Tools Used:** `nmap`, `OWASP ZAP`, `sqlmap`, browser developer tools, Linux networking utilities, Docker, GCC
+
+### Target Machines
+
+- **Metasploitable 2 VM**
+  - Intentionally vulnerable Linux target
+  - Used for reconnaissance, web mapping, and web vulnerability validation
+  - Hosted vulnerable services and DVWA
+
+- **Ubuntu 20.04 Lab VM**
+  - Used for local privilege escalation validation
+  - Deployed using KVM/libvirt
+  - Used for the Week 4 VAPT report based on PwnKit / CVE-2021-4034
+
+### Network
+
+- **Type:** Isolated virtual lab network
+- **Subnet:** `192.168.100.0/24`
+- **Hypervisor:** KVM/libvirt
+- **Virtual Bridge:** `virbr1`
+- **Proxy Setup:** OWASP ZAP on `127.0.0.1:8080`
+- **Browser:** Firefox manually configured to route traffic through ZAP
 
 ---
 
-## 🎯 Goals
+## 🎯 Internship Goals
 
-- Build practical, hands-on cybersecurity skills
-- Document learnings in a way that's useful to others
-- Work toward a strong foundation in penetration testing methodologies
+The internship helped me work toward the following goals:
 
----
-
-## 🗺️ Methodology So Far
-
-```
-Week 1: Environment setup → network scanning → host discovery
-Week 2: HTTP fundamentals → traffic interception → attack surface mapping
-Week 3: SQLi exploitation → XSS exploitation → filter bypass → mitigations
-```
+- Build confidence using a Linux-based security testing environment
+- Understand how attackers discover and map targets
+- Learn how to identify exposed services and application entry points
+- Practice using professional security tools in a controlled way
+- Validate vulnerabilities instead of only assuming their presence
+- Understand the difference between scanning, exploitation, and reporting
+- Learn how to support findings with evidence
+- Improve technical documentation and write-up quality
+- Build a stronger foundation for future work in VAPT, red teaming, and offensive security
 
 ---
 
-*Updated weekly throughout the internship.*
+## 🗺️ Methodology Followed
+
+The internship followed a practical penetration testing workflow:
+
+```text
+Lab Setup
+    ↓
+Network Discovery
+    ↓
+Service Enumeration
+    ↓
+Web Application Mapping
+    ↓
+Input and Parameter Discovery
+    ↓
+Vulnerability Identification
+    ↓
+Vulnerability Validation
+    ↓
+Impact Analysis
+    ↓
+Remediation Planning
+    ↓
+Professional Reporting
